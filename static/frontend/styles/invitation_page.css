@@ -1,0 +1,86 @@
+@import "login.css";
+.hero_Slideshow img {
+    position: absolute;
+    z-index: 0;
+    align-items: center;
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.main_center {
+    background-color: white;
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    min-height: calc(108vh - 50px);
+    background-color: rgb(207, 211, 188);
+}
+
+.btn-save {
+    padding: 15px;
+    background-color: #028a0f;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.btn-save:hover {
+    background-color: #5dbb63;
+    color: #071C4D;
+}
+
+.mySlides {
+    display: none;
+}
+
+.map_invite img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.card_map_invite {
+    opacity: 0.9;
+}
+
+.section-fail {
+    height: 90vh;
+}
+
+.section-fail h1 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #FF0000;
+}
+
+.section-fail p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #b1b1b1;
+}
+
+.logo_sad img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.align-content-center h1 {
+    font-family: "alex_brushregular";
+    color: #3d3d3d;
+}
+
+.align-content-center h3 {
+    font-family: "alex_brushregular";
+    color: #3d3d3d;
+    font-size: 25px;
+}

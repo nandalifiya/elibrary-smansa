@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Invitation Page 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='frontend/styles/main.css')}}">
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <div class="hero_Slideshow">
+                <img class="mySlides" src="{{ url_for('static', filename='frontend/images/slideimage1.jpg')}}">
+                <img class="mySlides" src="{{ url_for('static', filename='frontend/images/slideimage2.jpg')}}">
+                <img class="mySlides" src="{{ url_for('static', filename='frontend/images/slideimage3.jpg')}}">
+            </div>
+        </div>
+        <div class="container">
+            <div class="card align-content-center card_map_invite">
+                <h1 class="text-center">Denah Undangan</h1>
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, possimus at! Repudiandae deserunt
+                        ad adipisci veniam, corrupti modi porro inventore nobis, tenetur cumque ex fuga. Quaerat enim
+                        suscipit vitae ea?</p>
+                    <div class="map_invite">
+                        <img src="https://tlgur.com/d/g50bA2yG" alt="">
+                    </div>
+                </div>
+                <h1>{{message}}</h1>
+                {% if message=='Thank you for your response' %}
+                <h1><a href="https://tlgur.com/d/g50bA2yG">Download invitation</a></h1>
+                {% endif %}
+                <button type="submit" class="btn btn-save btn-block">Save</button>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='frontend/scripts/utils/slideshow_presenter.js')}}"></script>
+</body>
+
+</html>

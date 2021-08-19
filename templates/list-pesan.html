@@ -1,0 +1,104 @@
+<html>
+
+
+<head>
+    <title>List Pesan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='frontend/styles/list.css')}}"> -->
+    <link rel="stylesheet" href="../static/frontend/styles/list.css">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+   
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2> </h2>
+                    <h5 class="card-title">List Pesan</h5>
+                </div>
+
+                <table class="table table-striped" id="ex-table">
+                    <thead>
+                        <th>No.</th>
+                        <th>Nama</th>
+                        <th>Pesan</th>
+                    </thead>
+
+                    <tbody id="tbody1">
+
+                   </tbody>
+
+                </table>
+
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+
+
+                   <script id= "mainscript">
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyC3g_xv457rLqlrudmAtwfS3dQ9FfB7zRw",
+                        authDomain: "wedding-invitation-52b05.firebaseapp.com",
+                        databaseURL: "https://wedding-invitation-52b05-default-rtdb.firebaseio.com",
+                        projectId: "wedding-invitation-52b05",
+                        storageBucket: "wedding-invitation-52b05.appspot.com",
+                        messagingSenderId: "1046643793296",
+                        appId: "1:1046643793296:web:f1badd17e43b954cdfa715",
+                        measurementId: "G-1MQYE5W5PX"
+                    };
+                    firebase.initializeApp(firebaseConfig);
+
+                    function SelectAllData(){
+                        firebase.database().ref('Pesan').once('value',
+                        function(AllRecords){
+                            AllRecords.forEach(
+                                function(CurrentRecord){
+                                    var nam = CurrentRecord.val().nama;
+                                    var pes = CurrentRecord.val().pesan;
+                                    AddItemsToTable(nam, pes);
+                                }
+                            )
+                        });
+                    }
+
+                    window.onload = SelectAllData;
+
+                    var stdNo = 0;
+                    function AddItemsToTable(nam, pes){
+                        var tbody = document.getElementById('tbody1');
+                        var trow = document.createElement('tr');
+                        
+                        var td1 = document.createElement('td');
+                        var td2 = document.createElement('td');
+                        var td3 = document.createElement('td');
+
+                        td1.innerHTML = ++stdNo;
+                        td2.innerHTML = nam;
+                        td3.innerHTML = pes;
+
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+
+                        tbody.appendChild(trow);
+                    }
+
+                   </script>
+                        
+            </div>
+            {% for data in data %}
+            <hr> {{data}} {% endfor %}
+        </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

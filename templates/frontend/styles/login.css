@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+    color: #071C4D;
+}
+
+button {
+    padding: 10px;
+}
+
+label,
+select,
+option {
+    font-weight: 500 !important;
+}
+
+.card-form-width {
+    width: 100%;
+}
+
+.login-container {
+    background: -webkit-gradient(linear, left top, right top, color-stop(60%, #728c69), color-stop(40%, #728c69));
+    background: linear-gradient(90deg, #728c69 60%, #728c69 40%);
+    width: 100vw;
+    height: 150vh;
+}
+
+.hero img {
+    position: absolute;
+    z-index: 0;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero_inner img {
+    position: absolute;
+    z-index: 1;
+    height: 80vh;
+    width: 100%;
+    opacity: 0.2;
+}
+
+.section-footer a {
+    color: #071C4D;
+}
+
+.page-login {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+}
+
+.page-login .btn-login {
+    background-color: #028a0f;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.page-login .btn-login:hover {
+    background-color: #5dbb63;
+    color: #071C4D;
+}
+
+.page-login .section-left h1 {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.page-login .section-right {
+    margin-top: 350px;
+}
+
+.page-login .section-right .card {
+    background-color: rgb(203, 179, 151);
+    /* background-color: rgb(219, 223, 208);
+    background-color: rgb(170, 180, 156);
+    background-color: rgb(224, 222, 179);
+    background-color: rgb(207, 211, 188); */
+}
+
+.btn-outline-secondary {
+    padding: 10px;
+    min-width: 290px;
+}
+
+.main_center {
+    background-color: rgb(207, 211, 188);
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    min-height: calc(100vh - 60px);
+}
+
+@media screen and (min-width:400px) {
+    .page-login .section-right {
+        margin-top: 455px;
+    }
+}

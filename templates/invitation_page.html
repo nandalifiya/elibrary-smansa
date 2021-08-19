@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='frontend/styles/invitation_page.css')}}">
+    <!-- <link rel="stylesheet" href="../templates/frontend/styles/invitation_page.css"> -->
+</head>
+
+<body>
+    <main class="main_center">
+        <div class="container">
+            <div class="align-content-center card_map_invite">
+                {% if attend=='yes' %}
+            </br><h1 class="text-center"><b>Yang Terhormat {{afiliasi}} kami, saudara/i {{nama}} </b></h1>
+
+                <div class="map_invite">
+                    <img src="https://tlgur.com/d/gj5y6p0G" alt="">
+                </div>
+                <a href="https://tlgur.com/d/gpzjKp18">
+                </br>
+                    <button type="submit" class="btn btn-save btn-block">Save</button>
+                </br>
+                    <!-- save -->
+                </a>
+                {% else %}
+    
+            </br><h1 class="text-center"><b>Yang Terhormat {{afiliasi}} kami, saudara/i {{nama}} </b></h1>
+        </br> <p>
+                    Silahkan tinggalkan pesan dan doa terbaik untuk kami pada kolom di bawah ini:
+                </p>
+
+                <form action="{{ url_for('pesan_create')}}" method="post">
+
+                    <input type="hidden" class="form-control" id="fname" name="name" value={{nama}}>
+
+                    <div class="form-group">
+                        <textarea name="pesan" rows="4" cols="50" class="form-control"></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-save btn-block">Submit</button>
+                    
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='frontend/scripts/utils/slideshow_presenter.js')}}"></script>
+</body>
+
+</html>
